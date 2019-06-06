@@ -1,4 +1,4 @@
-Table of Content
+#Table of Content
 1. Team details
 2. Abstract
 3. Algorithms Used
