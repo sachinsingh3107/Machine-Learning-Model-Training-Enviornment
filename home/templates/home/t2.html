@@ -1,0 +1,38 @@
+{% extends 'home/base1.html' %}
+{% block body %}
+    <form id="msform" method="post">
+    {% csrf_token %}
+      <!-- progressbar -->
+      <ul id="progressbar">
+        <li class="active">Dataset Upload</li>
+        <li class="active">Feature Selection</li>
+        <li class="active">Data Processing</li>
+        <li>Model Selection</li>
+        <li>Result</li>
+      </ul>
+      <!-- fieldsets -->
+      <fieldset>
+        <h2 class="fs-title">Data Processing</h2>
+        <h3 class="fs-subtitle">This is step 3</h3>
+         <select name="scaler">
+            <option value="Nothing Selected">Select the Scaler</option>
+            <option value="Standard">Standard</option>
+            <option value="MinMax">MinMax</option>
+            <option value="Normalizer">Normalizer</option>
+        </select>
+
+        <div class="fs-subtitle" style="margin-top: 20px;">Select Columns having Categorical Features</div>
+        <table>
+            {% for title in titles %}
+                <tr>
+                    <td><label for="c">{{ title }}</label></td>
+                    <td><input type="radio" id="c" name="{{ title }}" value="1">
+                        <input type="radio" id="c" name="{{ title }}" value="0" style="display: none;" checked>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+        <input type="submit" class="next action-button" value="Next" />
+      </fieldset>
+    </form>
+{% endblock %}

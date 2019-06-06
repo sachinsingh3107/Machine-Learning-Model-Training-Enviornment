@@ -1,0 +1,117 @@
+.nav{
+    background-color: rgba(0, 0, 0, 0.81);
+    height:50px;
+}
+.head{
+    margin-left: 30px;
+    font-size:20px;
+    font-family:sans-serif;
+}
+.wrapper{
+    display:grid;
+
+    grid-template-columns: 250px 2fr ;
+    grid-template-areas:
+    "sb cnt ";
+
+    height:100vh;
+}
+ul,li{
+    margin:0;
+    padding:0;
+    }
+.sidebar{
+        grid-area:sb;
+        background-color: rgba(227, 237, 244, 0.98);
+}
+.content{
+    grid-area:cnt;
+}
+.side-items{
+    color:black;
+    list-style: none;
+    text-decoration:none;
+    display:grid;
+    flex-direction:column;
+    height:20px;
+    margin-left:10px;
+    margin-right:10px;
+    font-weight:400;
+
+    padding:20px;
+
+}
+.side-items a{
+    display:inline-block;
+    padding:10px;
+}
+.side-items a:hover{
+    background-color: white;
+    text-decoration-line: none;
+    border-radius:3px;
+
+}
+.item1{
+    margin-top:10px;
+}
+.side-items:active{
+    background-color: white;
+}
+.icon{
+    width:30px;
+}
+.input-form{
+    border-color:#1b1e21;
+    margin:10px;
+    padding:10px;
+    display:grid;
+
+}
+.form-wrapper{
+    display:grid;
+    background-color: rgba(227, 237, 244, 0.98);
+    margin-left:100px;
+    margin-right:100px;
+    margin-top:50px;
+    border-radius:10px;
+}
+
+.up-ds{
+     font-weight: 600;
+}
+.form-control{
+    grid-template-columns:1fr;
+}
+.feature-sel{
+    margin-top:10px;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+    "head head head"
+    ". label features"
+    "col  rad1 rad2";
+}
+.heading{
+    grid-area: head;
+}
+.l{
+    grid-area:label;
+}
+.f{
+    grid-area:features;
+}
+.columns{
+    grid-area:col;
+}
+.rad1{
+    grid-area:rad1;
+}
+.rad2{
+    grid-area:rad2;
+}
+
+
+
+
+
+

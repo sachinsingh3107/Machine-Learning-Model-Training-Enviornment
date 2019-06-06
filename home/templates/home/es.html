@@ -1,0 +1,24 @@
+{% extends 'home/base.html' %}
+{% block body %}
+<form class="input-form" method="post">
+    {% csrf_token %}
+    <div class="scaling">
+        <div style="font-weight: 600 ;margin-bottom:10px;">Encoding and Scaling</div>
+        <label for="scal">Select the Scaler</label>
+        <input list="scaler" id="scal" name="scaler"/>
+        <datalist id="scaler">
+            <option value="MinMax">
+            <option value="Normalizer">
+            <option value="Standard">
+        </datalist>
+        <div id="cat_fe" style="font-weight: 600 ;margin-bottom:10px;">Categorical Features</div>
+        {% for title in titles %}
+            <label style="margin-left: 10px; margin-right: 10px;" for="c">{{ title }}</label>
+            <input type="radio" id="c" name="{{ title }}" value="1">
+            <input type="radio" id="c" name="{{ title }}" value="0" style="display: none;" checked>
+        {% endfor %}
+        <br><input type="submit">
+    </div>
+
+</form>
+{% endblock %}

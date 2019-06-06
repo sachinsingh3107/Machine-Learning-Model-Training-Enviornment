@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>webapiUI</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+
+
+</head>
+<body>
+<ul class="nav">
+    <li class="nav-item">
+        <div class="head nav-link active text-white" href="#">MoTE ML Studio</div>
+    </li>
+</ul>
+<div class="wrapper">
+    <div class="sidebar">
+        <ul>
+            <li class="side-items item1">
+                <a href="upload-ds.html">Upload Dataset
+                </a>
+            </li>
+
+           <li class="side-items">
+                <a href="fs.html">Feature Selection</a>
+            </li>
+
+            <li class="side-items">
+                <a href="#">Encoding and Scaling</a>
+            </li>
+
+            <li class="side-items">
+                <a href="#">Model Selection</a>
+            </li>
+
+            <li class="side-items">
+                <a href="#">Results</a>
+            </li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="form-wrapper">
+        <form class="input-form">
+
+            <div id="uploadata" class="up-ds">
+                <label for="upload-ds">Upload Dataset</label>
+
+                <input type="file" class="form-control" id="upload-ds">
+
+            </div>
+
+            <div class="feature-sel">
+                <div class="heading" style="font-weight: 600;">Feature Selection</div>
+
+                <form id="fs">
+                    <div class="l">Label</div>
+                    <div class="f">features</div>
+
+                    <div class="columns">columns</div><input class="rad1" type="radio" name="fs"><input class="rad2" type="radio" name="fs">
+                </form>
+
+
+            </div>
+
+            <div class="scaling">
+                <div style="font-weight: 600 ;margin-bottom:10px;">Encoding and Scaling</div>
+                <label for="scal">Select the Scaler</label>
+                <input list="scaler" id="scal"/>
+                <datalist id="scaler">
+                    <option value="MinMax">
+                    <option value="Normalizer">
+                    <option value="Standard">
+                </datalist>
+
+
+
+                <div id="cat_fe" style="font-weight: 600 ;margin-bottom:10px;">Categorical Features</div>
+                <form>
+                    <label style="margin-left: 10px; margin-right: 10px;" for="c" >title</label><input type="checkbox" id="c">
+                </form>
+
+                <div style="font-weight: 600 ;margin-bottom:10px;">Model Selection</div>
+                <div>
+                    <input type="radio" id="reg" class="regn" name="model" onclick="regression()"/>
+                    <label for="reg">Regression</label>
+                    <div id="reg-algo" style="display:none">
+                        <label for="reg">Select the regression Algorithms</label>
+                        <input list="regn" id="reg-dropdown" autofocus/>
+                        <datalist id="regn">
+                            <option value="Linear regression">
+                            <option value="Polynomial">
+                            <option value="SVM">
+                            <option value="logistic regression">
+                        </datalist>
+                    </div>
+                </div>
+
+
+                <div>
+                    <input type="radio" id="cls" class="clasn" name="model" onclick="classification()"/>
+                    <label for="cls">Classification</label>
+                    <div id="clas-algo" style="display:none">
+                        <label for="reg">Select the Classification Algorithms</label>
+                        <input list="clsn" id="cls-dropdown" autofocus/>
+                        <datalist id="clsn">
+                            <option value="decision tree">
+                            <option value="Random forest">
+                            <option value="K-means">
+                            <option value="KNN">
+                        </datalist>
+                    </div>
+                </div>
+
+
+
+                </div>
+
+            </div>
+        </form>
+        </div>
+
+    </div>
+
+</div>
+<script src="../js/bootstrap.js"></script>
+<script src="../js/index.js"></script>
+<script>
+        const reg_div= document.getElementById("reg-algo");
+        const displayStatus1=reg_div.style.display;
+        const cls_div= document.getElementById("clas-algo");
+        const displayStatus2=cls_div.style.display;
+    function regression(){
+            reg_div.style.display="block";
+            cls_div.style.display="none";
+
+
+    }
+    function classification(){
+
+        reg_div.style.display="none";
+        cls_div.style.display="block";
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{% extends 'home/base.html' %}
+{% block body %}
+<form class="input-form" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div id="uploadata" class="up-ds">
+        <label for="upload-ds">Upload Dataset</label>
+        <input type="file" name="dataset" class="form-control" id="upload-ds">
+        <input type="submit">
+    </div>
+</form>
+{% endblock %}

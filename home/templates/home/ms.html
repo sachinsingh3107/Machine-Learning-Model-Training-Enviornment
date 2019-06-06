@@ -1,0 +1,59 @@
+{% extends 'home/base.html' %}
+{% block body %}
+<form class="input-form" method="post">
+        {% csrf_token %}
+        <div style="font-weight: 600 ;margin-bottom:10px;">Model Selection</div>
+        <div>
+            <input type="radio" id="reg" class="regn" name="model_type" value="Regression" onclick="regression()"/>
+            <label for="reg">Regression</label>
+            <div id="reg-algo" style="display:none">
+                <label for="reg">Select the regression Algorithms</label>
+                <input list="regn" id="reg-dropdown" name="model_reg" autofocus/>
+                <datalist id="regn">
+                    <option value="Linear">
+                    <option value="Polynomial">
+                    <option value="RandomForest">
+                    <option value="DecisionTree">
+                    <option value="Logistic">
+                </datalist>
+            </div>
+        </div>
+
+
+        <div>
+            <input type="radio" id="cls" class="clasn" name="model_type" value="Classification" onclick="classification()"/>
+            <label for="cls">Classification</label>
+            <div id="clas-algo" style="display:none">
+                <label for="reg">Select the Classification Algorithms</label>
+                <input list="clsn" id="cls-dropdown" name="model_cla" autofocus/>
+                <datalist id="clsn">
+                    <option value="DecisionTree">
+                    <option value="RandomForest">
+                    <option value="SVM">
+                    <option value="KNN">
+                    <option value="NaiveBayes">
+                </datalist>
+            </div>
+        </div>
+        <div><input type="submit"></div>
+
+    </form>
+    <h3>{{ Score }}</h3>
+    <script>
+            const reg_div= document.getElementById("reg-algo");
+            const displayStatus1=reg_div.style.display;
+            const cls_div= document.getElementById("clas-algo");
+            const displayStatus2=cls_div.style.display;
+        function regression(){
+                reg_div.style.display="block";
+                cls_div.style.display="none";
+
+
+        }
+        function classification(){
+
+            reg_div.style.display="none";
+            cls_div.style.display="block";
+        }
+    </script>
+{% endblock %}

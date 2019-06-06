@@ -1,0 +1,21 @@
+{% extends 'home/base1.html' %}
+{% block body %}
+    <form id="msform">
+    {% csrf_token %}
+      <!-- progressbar -->
+      <ul id="progressbar">
+        <li class="active">Dataset Upload</li>
+        <li class="active">Feature Selection</li>
+        <li class="active">Data Processing</li>
+        <li class="active">Model Selection</li>
+        <li class="active">Result</li>
+      </ul>
+      <!-- fieldsets -->
+      <fieldset>
+        <h2 class="fs-title">Result</h2>
+        <h3 class="fs-subtitle">This is step 5</h3>
+        <h3 class="fs-title">Score : {{ score }}</h3>
+        <a class="action-button" href="{% url 'index' %}" style="text-decoration: none; margin: 20px;">Home</a>
+      </fieldset>
+    </form>
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends 'home/base1.html' %}
+{% block body %}
+    <form id="msform" method="post">
+    {% csrf_token %}
+      <!-- progressbar -->
+      <ul id="progressbar">
+        <li class="active">Dataset Upload</li>
+        <li class="active">Feature Selection</li>
+        <li class="active">Data Processing</li>
+        <li class="active">Model Selection</li>
+        <li>Result</li>
+      </ul>
+      <!-- fieldsets -->
+      <fieldset>
+        <h2 class="fs-title">Model Selection</h2>
+        <h3 class="fs-subtitle">This is step 4</h3>
+          <table>
+                <tr>
+                    <td><label for="reg">Regression</label></td>
+                    <td><input type="radio" id="reg" class="regn" name="model_type" value="Regression" onclick="regression()"/></td>
+                    <td><label for="cls">Classification</label></td>
+                    <td><input type="radio" id="cls" class="clasn" name="model_type" value="Classification" onclick="classification()"/></td>
+                </tr>
+          </table>
+          <div id="reg-algo" style="display:none;">
+              <select name="model_reg">
+                  <option value="Nothing Selected">Select Algorithm</option>
+                  <option value="Linear">Linear</option>
+                  <option value="Polynomial">Polynomial</option>
+                  <option value="RandomForest">RandomForest</option>
+                  <option value="DecisionTree">DecisionTree</option>
+                  <option value="Logistic">Logistic</option>
+              </select>
+          </div>
+          <div id="clas-algo" style="display: none;">
+              <select name="model_cla">
+                  <option value="Nothing Selected">Select Algorithm</option>
+                  <option value="DecisionTree">DecisionTree</option>
+                  <option value="SVM">SVM</option>
+                  <option value="RandomForest">RandomForest</option>
+                  <option value="KNN">KNN</option>
+                  <option value="NaiveBayes">NaiveBayes</option>
+              </select>
+          </div>
+
+        <input type="submit" class="next action-button" value="Next" />
+      </fieldset>
+    </form>
+    <script>
+        const reg_div= document.getElementById("reg-algo");
+        const displayStatus1=reg_div.style.display;
+        const cls_div= document.getElementById("clas-algo");
+        const displayStatus2=cls_div.style.display;
+        function regression(){
+                reg_div.style.display="block";
+                cls_div.style.display="none";
+        }
+        function classification(){
+
+            reg_div.style.display="none";
+            cls_div.style.display="block";
+        }
+    </script>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'home/base.html' %}
+{% block body %}
+<form class="input-form" method="post">
+    {% csrf_token %}
+    <div class="feature-sel">
+        <div class="heading" style="font-weight: 600;">Feature Selection</div>
+            <table>
+                <tr>
+                    <th>Columns</th>
+                    <th>Labels</th>
+                    <th>Features</th>
+                </tr>
+                {% for title in titles %}
+                    <tr>
+                        <td><label for="{{ title }}">{{ title }}</label></td>
+                        <td><input class="rad1" type="radio" name="{{ title }}" value="0" id="{{ title }}"></td>
+                        <td><input class="rad2" type="radio" name="{{ title }}" value="1" id="{{ title }}"></td>
+                        <td><input type="radio" name="{{ title }}" value="2" id="{{ title }}" style="display: none;" checked></td>
+                    </tr>
+
+                {% endfor %}
+                <tr>
+                    <td><input type="submit"></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+    </div>
+</form>
+{% endblock %}

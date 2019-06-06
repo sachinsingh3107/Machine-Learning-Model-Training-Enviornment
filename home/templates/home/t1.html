@@ -1,0 +1,35 @@
+{% extends 'home/base1.html' %}
+{% block body %}
+    <form id="msform" method="post">
+    {% csrf_token %}
+      <!-- progressbar -->
+      <ul id="progressbar">
+        <li class="active">Dataset Upload</li>
+        <li class="active">Feature Selection</li>
+        <li>Data Processing</li>
+        <li>Model Selection</li>
+        <li>Result</li>
+      </ul>
+      <!-- fieldsets -->
+      <fieldset>
+        <h2 class="fs-title">Select Features</h2>
+        <h3 class="fs-subtitle">This is step 2</h3>
+        <table>
+            <tr>
+                <th>Columns</th>
+                <th>Labels</th>
+                <th>Features</th>
+            </tr>
+            {% for title in titles %}
+                <tr>
+                    <td><label for="{{ title }}">{{ title }}</label></td>
+                    <td><input class="rad1" type="radio" name="{{ title }}" value="0" id="{{ title }}"></td>
+                    <td><input class="rad2" type="radio" name="{{ title }}" value="1" id="{{ title }}"></td>
+                    <td><input type="radio" name="{{ title }}" value="2" id="{{ title }}" style="display: none;" checked></td>
+                </tr>
+            {% endfor %}
+        </table>
+        <input type="submit" class="next action-button" value="Next" />
+      </fieldset>
+    </form>
+{% endblock %}
