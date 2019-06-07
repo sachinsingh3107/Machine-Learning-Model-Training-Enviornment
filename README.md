@@ -1,4 +1,4 @@
-#Table of Content
+# Table of Content
 1. Team details
 2. Abstract
 3. Algorithms Used
@@ -48,8 +48,8 @@
 
 
 
-Chapter – 1
-Abstract
+# Chapter – 1
+# Abstract
 
 "Generally to implement Machine Learning, we have to have a basic understanding of a programming language (like python or R) and some packages (like numpy, pandas, sklearn etc) which are necessary for machine learning. Also Machine learning models requires computation power to run the algorithms. Our target is to eliminate all the above mentioned hurdles in the path to start ML."
 
@@ -72,8 +72,8 @@ Abstract
 
 
 
-Chapter – 2
-Algorithms Used
+# Chapter – 2
+# Algorithms Used
 
 2.1. Regression
 In statistical modelling, regression analysis is a set of statistical processes for estimating the relationships among variables. It includes many techniques for modelling and analysing several variables, when the focus is on the relationship between a dependent variable (or ‘label’) and one or more independent variable (or 'features'). More specifically, regression analysis helps one understand how the typical value of the dependent variable (or 'criterion variable') changes when any one of the independent variables is varied, while the other independent variables are held fixed.
@@ -121,8 +121,8 @@ A SVM is a discriminative classifier formally defined by a separating hyperplane
 
 
 
-Chapter – 3
-Libraries Used
+# Chapter – 3
+# Libraries Used
 
 3.1 Numpy
 NumPy is a library for the Python programming language, adding support for large, multi-dimensional arrays and matrices, along with a large collection of high-levelmathematical functions to operate on these arrays. The ancestor of NumPy, Numeric, was originally created by Jim Huguninwith contributions from several other developers. In 2005, Travis Oliphant created NumPy by incorporating features of the competing Numarray into Numeric, with extensive modifications. NumPy is open-source software and has many contributors.
@@ -161,8 +161,8 @@ Scikit-learn is largely written in Python, with some core algorithms written in 
 
 
 
-Chapter – 5
-Function Used
+# Chapter – 5
+# Function Used
 
 5.1 sklearn.preprocessing
 5.1.1 sklearn.preprocessing.StandardScaler
@@ -244,8 +244,8 @@ Parameters:	max_features : int, float, string or None, optional (default=”auto
 
 
 
-Chapter – 6
-Codes Description
+# Chapter – 6
+# Codes Description
  
  
 Figure 6.1
@@ -293,44 +293,8 @@ Figure 6.3
 
 
 
-
-
-
-
-
-
-
-
-
-Chapter – 7
-Screenshots of the Application
-
- 
-Figure 1. Upload a Dataset
- 
-Figure 2. Selecting Useful features and Labels
- 
-Figure 3. Data Processing Step  
-Figure 4. Model Selecting
- 
-Figure 5. Result Display
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Chapter – 8
-Summary
+# Chapter – 7
+# Summary
 
 "The main idea of our application “MoTE” allows the user to perform all the tasks from data processing to model selection without writing a single line of code. With the help of a user friendly interface the application takes the dataset as input, do all the computation and finally displays the score for the model. Generally to implement Machine Learning, we have to have a basic understanding of a programming language (like python or R) and some packages (like numpy, pandas, sklearn etc) which are necessary for machine learning. Also Machine learning models requires computation power to run the algorithms. Our target is to eliminate all the above mentioned hurdles in the path to start ML. Our application eliminates all the difficulties that a beginner faces if persons knows how ML works then person can perform all the tasks and learn about the dataset more efficiently and able to choose the best algorithms for that particular problem. It increases efficiency and conserve the time of the user. It also clears the concept of user about the dataset. There will be no need to code from scratch if the user knows the basic of machine learning then this application can be easily used on datasets and get the required Results in less amount of time."
 
